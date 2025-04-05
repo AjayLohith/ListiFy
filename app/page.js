@@ -112,12 +112,12 @@ export default function Home() {
         </form>
 
         <div className="relative overflow-x-auto shadow-md rounded-lg mt-5 sm:mt-10 w-[95%] sm:w-[90%] md:w-[80%] lg:w-[60%] mx-auto">
-          <table className="w-full text-xs sm:text-sm text-left">
+          <table className="w-full text-xs sm:text-sm text-left sm:min-w-0 min-w-[600px]">
             <thead className="text-xs uppercase bg-[#6D7A60]">
               <tr>
                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-[#DCDCDC] font-bold">Id</th>
                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-[#DCDCDC] font-bold">Title</th>
-                <th className="px-2 sm:px-4 py-2 sm:py-3 text-[#DCDCDC] font-bold hidden sm:table-cell">Description</th>
+                <th className="px-2 sm:px-4 py-2 sm:py-3 text-[#DCDCDC] font-bold">Description</th>
                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-[#DCDCDC] font-bold">Status</th>
                 <th className="px-2 sm:px-4 py-2 sm:py-3 text-[#DCDCDC] font-bold">Action</th>
               </tr>

@@ -8,28 +8,28 @@ const ToDo = ({
   mongoId = '', 
   deleteTodo = () => {}, 
   completeTodo = () => {}, 
-  undoComplete = () => {} 
+  undoComplete = () => {},
+  isLast = false // Add this prop
 }) => {
-  // Check if required props are valid
   if (!mongoId || typeof deleteTodo !== 'function') {
     return null;
   }
 
   return (
-    <tr className="bg-[#BAD4AA] hover:bg-[#EBF5DF] border-b-2 border-[#D9E3CD] last:border-b-0 transition-colors duration-200">
-      <td className="px-4 py-4 text-[#2C3639]">{id + 1}</td>
-      <td className={`px-4 py-4 text-[#2C3639] ${complete ? 'line-through opacity-50' : ''}`}>
+    <tr className="bg-white hover:bg-gray-50 border-b last:border-b-0">
+      <td className="px-2 sm:px-4 py-2 sm:py-3 whitespace-nowrap">{id + 1}</td>
+      <td className={`px-2 sm:px-4 py-2 sm:py-3 min-w-[100px] ${complete ? 'line-through opacity-50' : ''}`}>
         {title}
       </td>
-      <td className={`px-4 py-4 text-[#2C3639] ${complete ? 'line-through opacity-50' : ''}`}>
+      <td className={`px-2 sm:px-4 py-2 sm:py-3 min-w-[150px] ${complete ? 'line-through opacity-50' : ''}`}>
         {description}
       </td>
-      <td className="px-4 py-4">
+      <td className="px-2 sm:px-4 py-2 sm:py-3 whitespace-nowrap">
         <span className={`font-medium ${complete ? 'text-[#3F4E4F]' : 'text-[#2C3639]'}`}>
           {complete ? "Completed" : "Pending"}
         </span>
       </td>
-      <td className="px-4 py-4 flex gap-2">
+      <td className="px-2 sm:px-4 py-2 sm:py-3 flex gap-2 whitespace-nowrap">
         <button
           onClick={() => mongoId && deleteTodo(mongoId)}
           className="bg-[#2C3639] hover:bg-[#3F4E4F] text-[#EBF5DF] px-3 py-1.5 rounded-lg transform transition-all duration-200 hover:scale-105 active:scale-95 shadow-md hover:shadow-lg font-medium"
